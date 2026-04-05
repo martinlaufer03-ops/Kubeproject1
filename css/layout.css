@@ -1,0 +1,349 @@
+/* layout.css — controls the structural skeleton of every page:
+   the header, navigation, footer, and the main content wrapper.
+   These styles apply to ALL pages since every page loads this file. */
+
+
+/* =============================================
+   PAGE WRAPPER
+   A centered container that keeps content from
+   stretching too wide on large screens.
+   ============================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width); /* 1200px — defined in variables.css */
+  margin: 0 auto;              /* auto left/right margin = centered */
+  padding: 0 var(--space-sm);  /* 16px breathing room on sides */
+}
+
+
+/* =============================================
+   SITE HEADER
+   Fixed at the top so it stays visible while scrolling.
+   ============================================= */
+
+.site-header {
+  position: fixed;           /* stays at top even when page scrolls */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height); /* 70px — defined in variables.css */
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-mid);
+  z-index: 100;              /* sits above all other page content */
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header .container {
+  height: 100%;
+  display: flex;             /* puts logo, nav, and icons in a row */
+  align-items: center;       /* vertically centers them */
+  justify-content: space-between; /* logo on left, icons on right */
+}
+
+/* Pushes page content down so it isn't hidden behind the fixed header */
+body {
+  padding-top: var(--header-height);
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
+}
+
+
+/* =============================================
+   LOGO
+   ============================================= */
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.site-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Text fallback if logo image isn't available yet */
+.site-logo__text {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  letter-spacing: -0.5px;
+}
+
+
+/* =============================================
+   MAIN NAVIGATION
+   ============================================= */
+
+.site-nav {
+  display: none; /* hidden on mobile — shown at tablet+ breakpoint below */
+}
+
+.site-nav__list {
+  display: flex;
+  gap: var(--space-lg); /* 32px between nav links */
+}
+
+.site-nav__link {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  transition: color var(--transition);
+}
+
+.site-nav__link:hover,
+.site-nav__link.active {
+  color: var(--color-orange);
+}
+
+
+/* =============================================
+   HEADER ICONS (search, wishlist, cart)
+   ============================================= */
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm); /* 16px between icons */
+}
+
+.header-icon {
+  position: relative; /* needed for the cart badge positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-navy);
+  border-radius: 50%;
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+}
+
+.header-icon:hover {
+  background: var(--color-gray);
+  color: var(--color-orange);
+}
+
+.header-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* The red/orange number bubble on the cart icon */
+.cart-badge {
+  display: none; /* hidden when cart is empty */
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 9px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+
+/* =============================================
+   HAMBURGER MENU BUTTON (mobile only)
+   ============================================= */
+
+.nav-toggle {
+  display: flex;          /* visible on mobile */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-navy);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Animate the 3 bars into an X when menu is open */
+.nav-toggle.is-open .nav-toggle__bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.is-open .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-open .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* =============================================
+   MOBILE MENU DRAWER
+   Slides down from the header when hamburger is clicked.
+   ============================================= */
+
+.mobile-nav {
+  display: none; /* controlled by JS — js/nav.js adds .is-open */
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-mid);
+  box-shadow: var(--shadow-md);
+  z-index: 99;
+  padding: var(--space-md) 0;
+}
+
+.mobile-nav.is-open {
+  display: block;
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav__link {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  border-bottom: 1px solid var(--color-gray);
+  transition: background var(--transition), color var(--transition);
+}
+
+.mobile-nav__link:hover {
+  background: var(--color-gray);
+  color: var(--color-orange);
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.site-footer {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: var(--space-2xl) 0 var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;  /* single column on mobile */
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.footer-col__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-white);
+}
+
+.footer-col__list li {
+  margin-bottom: var(--space-xs);
+}
+
+.footer-col__list a {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition);
+}
+
+.footer-col__list a:hover {
+  color: var(--color-orange);
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+/* Social media icons row */
+.footer-social {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.footer-social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  transition: background var(--transition);
+}
+
+.footer-social__link:hover {
+  background: var(--color-orange);
+}
+
+.footer-social__link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Bottom bar: copyright */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-md);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =============================================
+   RESPONSIVE — TABLET (768px+)
+   ============================================= */
+
+@media (min-width: 768px) {
+  .site-nav {
+    display: block; /* show desktop nav */
+  }
+
+  .nav-toggle {
+    display: none; /* hide hamburger button */
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+}
+
+
+/* =============================================
+   RESPONSIVE — DESKTOP (1024px+)
+   ============================================= */
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* 4 columns: wide brand col + 3 link cols */
+  }
+}

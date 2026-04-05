@@ -13,8 +13,8 @@
 - [x] 🔴 Write `css/variables.css` — colors, fonts, spacing, border-radius [20m]
 - [x] 🔴 Add Google Fonts link to all 6 HTML pages [10m]
 - [x] 🔴 Link all CSS files in all 6 HTML pages [10m]
-- [ ] 🟡 Initialize git repo and push initial commit to GitHub [15m]
-- [ ] 🟡 Enable GitHub Pages in repo settings [5m]
+- [x] 🟡 Initialize git repo and push initial commit to GitHub [15m]
+- [x] 🟡 Enable GitHub Pages in repo settings [5m]
 
 **Milestone 1 total: ~1h 30m**
 

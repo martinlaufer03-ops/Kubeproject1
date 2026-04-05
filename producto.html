@@ -18,16 +18,82 @@
 <body>
 
   <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="KUBE - Inicio">
+        <span class="site-logo__text">KUBE</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link">Inicio</a></li>
+          <li><a href="productos.html" class="site-nav__link">Productos</a></li>
+          <li><a href="lista-de-bodas.html" class="site-nav__link">Lista de Bodas</a></li>
+          <li><a href="gift-cards.html" class="site-nav__link">Gift Cards</a></li>
+          <li><a href="contacto.html" class="site-nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <button class="header-icon" id="cartToggle" aria-label="Abrir carrito">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
   </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+    <ul class="mobile-nav__list">
+      <li><a href="index.html" class="mobile-nav__link">Inicio</a></li>
+      <li><a href="productos.html" class="mobile-nav__link">Productos</a></li>
+      <li><a href="lista-de-bodas.html" class="mobile-nav__link">Lista de Bodas</a></li>
+      <li><a href="gift-cards.html" class="mobile-nav__link">Gift Cards</a></li>
+      <li><a href="contacto.html" class="mobile-nav__link">Contacto</a></li>
+    </ul>
+  </nav>
 
   <main>
   </main>
 
   <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <p class="footer-col__title">KUBE</p>
+          <p>Regalamos momentos que emocionan.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Tienda</p>
+          <ul class="footer-col__list">
+            <li><a href="productos.html">Todos los productos</a></li>
+            <li><a href="lista-de-bodas.html">Lista de Bodas</a></li>
+            <li><a href="gift-cards.html">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Ayuda</p>
+          <ul class="footer-col__list">
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Contacto</p>
+          <ul class="footer-col__list">
+            <li><a href="mailto:hola@kube.com.py">hola@kube.com.py</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 KUBE. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
 
   <div class="cart-drawer" id="cartDrawer"></div>
   <div class="cart-overlay" id="cartOverlay"></div>
+
 
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>

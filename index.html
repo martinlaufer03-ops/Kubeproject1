@@ -19,19 +19,100 @@
 </head>
 <body>
 
-  <!-- HEADER (will be built in Milestone 2) -->
+  <!-- HEADER -->
   <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="KUBE - Inicio">
+        <span class="site-logo__text">KUBE</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul class="site-nav__list">
+          <li><a href="index.html" class="site-nav__link">Inicio</a></li>
+          <li><a href="productos.html" class="site-nav__link">Productos</a></li>
+          <li><a href="lista-de-bodas.html" class="site-nav__link">Lista de Bodas</a></li>
+          <li><a href="gift-cards.html" class="site-nav__link">Gift Cards</a></li>
+          <li><a href="contacto.html" class="site-nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <button class="header-icon" id="cartToggle" aria-label="Abrir carrito">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
   </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+    <ul class="mobile-nav__list">
+      <li><a href="index.html" class="mobile-nav__link">Inicio</a></li>
+      <li><a href="productos.html" class="mobile-nav__link">Productos</a></li>
+      <li><a href="lista-de-bodas.html" class="mobile-nav__link">Lista de Bodas</a></li>
+      <li><a href="gift-cards.html" class="mobile-nav__link">Gift Cards</a></li>
+      <li><a href="contacto.html" class="mobile-nav__link">Contacto</a></li>
+    </ul>
+  </nav>
 
   <!-- MAIN PAGE CONTENT -->
   <main>
   </main>
 
-  <!-- FOOTER (will be built in Milestone 2) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <p class="footer-col__title">KUBE</p>
+          <p>Regalamos momentos que emocionan. Tu tienda de regalos y listas de bodas en Paraguay.</p>
+          <div class="footer-social">
+            <a href="#" class="footer-social__link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608C4.509 2.489 5.776 2.225 7.142 2.163 8.408 2.105 8.788 2.163 12 2.163zm0-2.163c-3.259 0-3.667.014-4.947.072-1.529.07-2.894.405-3.99 1.501C1.967 2.669 1.632 4.034 1.562 5.563 1.504 6.843 1.49 7.251 1.49 12c0 4.749.014 5.157.072 6.437.07 1.529.405 2.894 1.501 3.99 1.096 1.096 2.461 1.431 3.99 1.501C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.529-.07 2.894-.405 3.99-1.501 1.096-1.096 1.431-2.461 1.501-3.99.058-1.28.072-1.688.072-6.437 0-4.749-.014-5.157-.072-6.437-.07-1.529-.405-2.894-1.501-3.99C20.841 1.967 19.476 1.632 17.947 1.562 16.667 1.504 16.259 1.49 12 1.49zm0 5.838a4.672 4.672 0 100 9.344 4.672 4.672 0 000-9.344zm0 7.71a3.038 3.038 0 110-6.076 3.038 3.038 0 010 6.076zm5.923-7.9a1.09 1.09 0 11-2.18 0 1.09 1.09 0 012.18 0z"/></svg>
+            </a>
+            <a href="#" class="footer-social__link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.931-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Tienda</p>
+          <ul class="footer-col__list">
+            <li><a href="productos.html">Todos los productos</a></li>
+            <li><a href="lista-de-bodas.html">Lista de Bodas</a></li>
+            <li><a href="gift-cards.html">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Ayuda</p>
+          <ul class="footer-col__list">
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Envíos y devoluciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__title">Contacto</p>
+          <ul class="footer-col__list">
+            <li><a href="tel:+595">+595 (21) 000-000</a></li>
+            <li><a href="mailto:hola@kube.com.py">hola@kube.com.py</a></li>
+            <li><a href="#">Asunción, Paraguay</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 KUBE. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- CART DRAWER (will be built in Milestone 6) -->
+  <!-- CART DRAWER (built in Milestone 6) -->
   <div class="cart-drawer" id="cartDrawer"></div>
   <div class="cart-overlay" id="cartOverlay"></div>
 
