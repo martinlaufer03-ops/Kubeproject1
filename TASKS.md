@@ -57,15 +57,15 @@
 ## Milestone 4: Product Listing Page
 *Goal: `productos.html` shows all products from `products.js` in a grid. Clicking a category filter button highlights it and filters the visible cards. Clicking a card goes to the detail page.*
 
-- [ ] 🔴 Write JS to render product cards from `products.js` into the page grid [30m]
-- [ ] 🔴 Write product listing grid HTML structure in `productos.html` [15m]
-- [ ] 🔴 Style listing grid in `css/pages/productos.css` — 1/2/3 col responsive [25m]
-- [ ] 🔴 Write filter buttons HTML (Todos, Regalos, Bodas, etc.) [10m]
-- [ ] 🔴 Write JS filter logic — show/hide cards by category [25m]
-- [ ] 🔴 Style active filter button state (orange highlight) [10m]
-- [ ] 🟡 Add product count label ("Mostrando X productos") [10m]
+- [x] 🔴 Write JS to render product cards from `products.js` into the page grid [30m]
+- [x] 🔴 Write product listing grid HTML structure in `productos.html` [15m]
+- [x] 🔴 Style listing grid in `css/pages/productos.css` — 1/2/3 col responsive [25m]
+- [x] 🔴 Write filter buttons HTML (Todos, Regalos, Bodas, etc.) [10m]
+- [x] 🔴 Write JS filter logic — show/hide cards by category [25m]
+- [x] 🔴 Style active filter button state (orange highlight) [10m]
+- [x] 🟡 Add product count label ("Mostrando X productos") [10m]
 - [ ] 🟡 Test filter buttons + product links work correctly [10m]
-- [ ] 🟡 Git commit: "Day 4 — product listing page" [5m]
+- [x] 🟡 Git commit: "Day 4 — product listing page" [5m]
 
 **Milestone 4 total: ~2h 20m**
 

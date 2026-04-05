@@ -55,6 +55,36 @@
   </nav>
 
   <main>
+
+    <!-- PAGE HEADER / BREADCRUMB -->
+    <div class="page-header">
+      <div class="container">
+        <p class="page-header__breadcrumb">
+          <a href="index.html">Inicio</a> /
+          <a href="productos.html">Productos</a> /
+          <span id="breadcrumbName">Producto</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- PRODUCT DETAIL -->
+    <section class="product-detail">
+      <div class="container">
+        <div id="productContent">
+          <!-- Injected by JavaScript below -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED PRODUCTS -->
+    <section class="related-products">
+      <div class="container">
+        <h2 class="section-title">También te puede gustar</h2>
+        <p class="section-subtitle">Más productos seleccionados para vos</p>
+        <div class="product-grid" id="relatedGrid"></div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -99,5 +129,125 @@
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/gallery.js"></script>
+  <script>
+    // Read the product ID from the URL: producto.html?id=001
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+    const product = products.find(p => p.id === productId);
+    const content = document.getElementById('productContent');
+
+    if (!product) {
+      // Product ID not found — show a friendly error
+      content.innerHTML = `
+        <div class="not-found">
+          <div class="not-found__icon">🔍</div>
+          <h1 class="not-found__title">Producto no encontrado</h1>
+          <p class="not-found__text">El producto que buscás no existe o fue eliminado.</p>
+          <a href="productos.html" class="btn btn--primary">Ver todos los productos</a>
+        </div>`;
+    } else {
+      // Update page title and breadcrumb
+      document.title = `${product.name} — KUBE`;
+      document.getElementById('breadcrumbName').textContent = product.name;
+
+      // Quantity counter (starts at 1)
+      let quantity = 1;
+
+      // Build the product detail HTML
+      content.innerHTML = `
+        <div class="product-detail__inner">
+
+          <!-- IMAGE GALLERY -->
+          <div class="product-gallery">
+            <img
+              class="product-gallery__main"
+              id="mainImage"
+              src="${product.images[0]}"
+              alt="${product.name}"
+            />
+            <div class="product-gallery__thumbs">
+              ${product.images.map((img, i) => `
+                <img
+                  class="product-gallery__thumb ${i === 0 ? 'active' : ''}"
+                  src="${img}"
+                  alt="${product.name} - imagen ${i + 1}"
+                />
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- PRODUCT INFO -->
+          <div class="product-info">
+            ${product.badge ? `<span class="product-info__badge">${product.badge}</span>` : ''}
+            <h1 class="product-info__name">${product.name}</h1>
+            <p class="product-info__price">Gs. ${product.price.toLocaleString('es-PY')}</p>
+            <p class="product-info__stock">En stock</p>
+            <p class="product-info__description">${product.description}</p>
+
+            <!-- Quantity selector -->
+            <div class="product-info__quantity">
+              <span class="quantity-label">Cantidad:</span>
+              <div class="quantity-controls">
+                <button class="quantity-btn" id="qtyMinus" aria-label="Reducir cantidad">−</button>
+                <span class="quantity-value" id="qtyValue">1</span>
+                <button class="quantity-btn" id="qtyPlus" aria-label="Aumentar cantidad">+</button>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="product-info__actions">
+              <button class="btn btn--primary" id="addToCartBtn">
+                Agregar al carrito
+              </button>
+              <a href="productos.html" class="btn btn--secondary">Seguir comprando</a>
+            </div>
+          </div>
+
+        </div>
+      `;
+
+      // Wire up quantity buttons
+      document.getElementById('qtyMinus').addEventListener('click', () => {
+        if (quantity > 1) {
+          quantity--;
+          document.getElementById('qtyValue').textContent = quantity;
+        }
+      });
+
+      document.getElementById('qtyPlus').addEventListener('click', () => {
+        quantity++;
+        document.getElementById('qtyValue').textContent = quantity;
+      });
+
+      // Wire up Add to Cart button — adds the selected quantity
+      document.getElementById('addToCartBtn').addEventListener('click', () => {
+        for (let i = 0; i < quantity; i++) {
+          addToCart(product);
+        }
+      });
+
+      // Re-init gallery after content is injected into the DOM
+      initGallery();
+    }
+
+    // Render related products (3 random others, excluding current product)
+    const related = products
+      .filter(p => p.id !== productId)
+      .slice(0, 3);
+
+    const relatedGrid = document.getElementById('relatedGrid');
+    if (relatedGrid) {
+      relatedGrid.innerHTML = related.map(p => `
+        <a href="producto.html?id=${p.id}" class="product-card">
+          <img class="product-card__image" src="${p.images[0]}" alt="${p.name}" loading="lazy" />
+          ${p.badge ? `<span class="product-card__badge">${p.badge}</span>` : ''}
+          <div class="product-card__info">
+            <h3 class="product-card__name">${p.name}</h3>
+            <p class="product-card__price">Gs. ${p.price.toLocaleString('es-PY')}</p>
+          </div>
+        </a>
+      `).join('');
+    }
+  </script>
 </body>
 </html>
