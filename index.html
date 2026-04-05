@@ -63,6 +63,79 @@
 
   <!-- MAIN PAGE CONTENT -->
   <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <span class="hero__tag">Nueva colección disponible</span>
+          <h1 class="hero__title">
+            Regalamos momentos que <span>emocionan</span>
+          </h1>
+          <p class="hero__subtitle">
+            Encuentra el regalo perfecto para cada ocasión. Regalos únicos, listas de bodas y gift cards para sorprender a quien más querés.
+          </p>
+          <div class="hero__actions">
+            <a href="productos.html" class="btn btn--primary">Ver productos</a>
+            <a href="lista-de-bodas.html" class="btn btn--ghost">Lista de Bodas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="categories">
+      <div class="container">
+        <h2 class="section-title">¿Qué estás buscando?</h2>
+        <p class="section-subtitle">Explorá nuestras categorías y encontrá el regalo ideal</p>
+        <div class="categories-grid">
+          <a href="productos.html?categoria=regalos" class="category-card">
+            <span class="category-card__icon">🎁</span>
+            <span class="category-card__name">Regalos</span>
+            <span class="category-card__count">Para toda ocasión</span>
+          </a>
+          <a href="lista-de-bodas.html" class="category-card">
+            <span class="category-card__icon">💍</span>
+            <span class="category-card__name">Lista de Bodas</span>
+            <span class="category-card__count">Tu lista perfecta</span>
+          </a>
+          <a href="productos.html?categoria=hogar" class="category-card">
+            <span class="category-card__icon">🏠</span>
+            <span class="category-card__name">Hogar</span>
+            <span class="category-card__count">Deco y living</span>
+          </a>
+          <a href="gift-cards.html" class="category-card">
+            <span class="category-card__icon">💳</span>
+            <span class="category-card__name">Gift Cards</span>
+            <span class="category-card__count">El regalo seguro</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <section class="featured-products">
+      <div class="container">
+        <div class="featured-products__header">
+          <h2 class="section-title">Productos destacados</h2>
+          <a href="productos.html" class="btn btn--secondary">Ver todos</a>
+        </div>
+        <!-- Product cards are injected here by JavaScript -->
+        <div class="product-grid" id="featuredGrid"></div>
+      </div>
+    </section>
+
+    <!-- PROMO BANNER -->
+    <section class="promo-banner">
+      <div class="container">
+        <h2 class="promo-banner__title">¿Próxima boda?</h2>
+        <p class="promo-banner__text">
+          Creá tu Lista de Bodas con KUBE y compartila con tus invitados. Simple, elegante, sin complicaciones.
+        </p>
+        <a href="lista-de-bodas.html" class="btn btn--ghost">Conocer más</a>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -120,5 +193,32 @@
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
+  <script>
+    // Render the first 8 products into the featured grid on the homepage
+    function renderFeatured() {
+      const grid = document.getElementById('featuredGrid');
+      if (!grid) return;
+
+      const featured = products.slice(0, 8); // first 8 from products.js
+
+      grid.innerHTML = featured.map(product => `
+        <a href="producto.html?id=${product.id}" class="product-card">
+          <img
+            class="product-card__image"
+            src="${product.images[0]}"
+            alt="${product.name}"
+            loading="lazy"
+          />
+          ${product.badge ? `<span class="product-card__badge ${product.badge === 'Nuevo' ? 'product-card__badge--new' : ''}">${product.badge}</span>` : ''}
+          <div class="product-card__info">
+            <h3 class="product-card__name">${product.name}</h3>
+            <p class="product-card__price">Gs. ${product.price.toLocaleString('es-PY')}</p>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    renderFeatured();
+  </script>
 </body>
 </html>

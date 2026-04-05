@@ -1,0 +1,353 @@
+/* components.css — reusable UI pieces used across multiple pages.
+   Think of these as building blocks: a product card looks the same
+   whether it's on the homepage or the listing page.
+   We define it once here and reuse it everywhere. */
+
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 12px var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98); /* tiny press-down effect when clicked */
+}
+
+/* Primary: orange fill — main call-to-action */
+.btn--primary {
+  background: var(--color-orange);
+  color: var(--color-white);
+  border-color: var(--color-orange);
+}
+
+.btn--primary:hover {
+  background: #d96a38; /* slightly darker orange */
+  border-color: #d96a38;
+}
+
+/* Secondary: navy outline */
+.btn--secondary {
+  background: transparent;
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.btn--secondary:hover {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* Ghost: white outline — used on dark backgrounds */
+.btn--ghost {
+  background: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn--ghost:hover {
+  background: var(--color-white);
+  color: var(--color-navy);
+}
+
+.btn--full {
+  width: 100%; /* stretches button to fill its container */
+}
+
+
+/* =============================================
+   SECTION TITLE
+   Reusable centered heading for each section.
+   ============================================= */
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-navy);
+  text-align: center;
+  margin-bottom: var(--space-xs);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+
+/* =============================================
+   PRODUCT CARD
+   Used on homepage (featured products) and listing page.
+   ============================================= */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-gray-mid);
+  overflow: hidden; /* clips the image to the card's rounded corners */
+  text-decoration: none;
+  color: var(--color-text);
+  transition: box-shadow var(--transition), transform var(--transition);
+  position: relative; /* needed to position the badge */
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px); /* card lifts slightly on hover */
+}
+
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* always a perfect square */
+  object-fit: cover;   /* fills the square without distorting the image */
+  background: var(--color-gray); /* shown while image loads */
+}
+
+/* Placeholder shown when no image is available */
+.product-card__image-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  font-size: 2rem;
+}
+
+.product-card__info {
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* takes up remaining height so all cards in a row are the same height */
+}
+
+.product-card__name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--color-navy);
+  margin-bottom: var(--space-xs);
+  line-height: 1.3;
+}
+
+.product-card__price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  margin-top: auto; /* pushes price to the bottom of the card */
+}
+
+/* Badge: small label in the top-left corner of the card */
+.product-card__badge {
+  position: absolute;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-card__badge--new {
+  background: var(--color-navy);
+}
+
+
+/* =============================================
+   PRODUCT GRID
+   Responsive grid that holds product cards.
+   ============================================= */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  gap: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablet */
+    gap: var(--space-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  }
+}
+
+
+/* =============================================
+   CART DRAWER
+   Slides in from the right edge of the screen.
+   ============================================= */
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%); /* hidden off-screen to the right */
+  transition: transform 0.3s ease;
+}
+
+/* When JS adds .is-open, the drawer slides into view */
+.cart-drawer.is-open {
+  transform: translateX(0);
+}
+
+.cart-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-gray-mid);
+}
+
+.cart-drawer__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-navy);
+}
+
+.cart-drawer__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+  padding: 4px;
+  border-radius: var(--radius);
+  transition: color var(--transition);
+}
+
+.cart-drawer__close:hover {
+  color: var(--color-navy);
+}
+
+.cart-drawer__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-drawer__items {
+  flex: 1;
+  overflow-y: auto; /* scroll if there are many items */
+  padding: var(--space-md);
+}
+
+.cart-drawer__empty {
+  text-align: center;
+  color: var(--color-text-light);
+  padding: var(--space-2xl) var(--space-md);
+}
+
+.cart-drawer__footer {
+  padding: var(--space-md);
+  border-top: 1px solid var(--color-gray-mid);
+}
+
+.cart-drawer__total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-navy);
+  margin-bottom: var(--space-md);
+}
+
+/* Cart item row */
+.cart-item {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.cart-item__image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--color-gray);
+  flex-shrink: 0;
+}
+
+.cart-item__info {
+  flex: 1;
+}
+
+.cart-item__name {
+  font-size: 0.85rem;
+  color: var(--color-navy);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cart-item__price {
+  font-size: 0.9rem;
+  color: var(--color-orange);
+  font-weight: 700;
+}
+
+.cart-item__qty {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.cart-item__remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+  font-size: 1.2rem;
+  padding: 0 4px;
+  align-self: flex-start;
+  transition: color var(--transition);
+}
+
+.cart-item__remove:hover {
+  color: #e53e3e; /* red on hover */
+}
+
+/* Dark overlay behind the cart drawer */
+.cart-overlay {
+  display: none;
+  position: fixed;
+  inset: 0; /* covers the entire screen */
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 199;
+}
+
+.cart-overlay.is-open {
+  display: block;
+}

@@ -23,14 +23,14 @@
 ## Milestone 2: Header + Footer + Nav
 *Goal: Every page has the same working header and footer. The hamburger menu opens and closes on mobile. The nav links go to the correct pages.*
 
-- [ ] 🔴 Write header HTML (logo, nav links, icons) — copy into all 6 pages [30m]
-- [ ] 🔴 Write `css/layout.css` — header styles, logo sizing, nav flex layout [30m]
-- [ ] 🔴 Write mobile hamburger menu HTML + `js/nav.js` toggle logic [20m]
-- [ ] 🔴 Style hamburger menu open/close state in `layout.css` [20m]
-- [ ] 🔴 Write footer HTML — links, social icons, copyright [20m]
-- [ ] 🔴 Style footer in `layout.css` [20m]
+- [x] 🔴 Write header HTML (logo, nav links, icons) — copy into all 6 pages [30m]
+- [x] 🔴 Write `css/layout.css` — header styles, logo sizing, nav flex layout [30m]
+- [x] 🔴 Write mobile hamburger menu HTML + `js/nav.js` toggle logic [20m]
+- [x] 🔴 Style hamburger menu open/close state in `layout.css` [20m]
+- [x] 🔴 Write footer HTML — links, social icons, copyright [20m]
+- [x] 🔴 Style footer in `layout.css` [20m]
 - [ ] 🟡 Test header + footer on mobile (375px) and desktop (1440px) [10m]
-- [ ] 🟡 Git commit: "Day 2 — header, footer, mobile nav" [5m]
+- [x] 🟡 Git commit: "Day 2 — header, footer, mobile nav" [5m]
 
 **Milestone 2 total: ~2h 35m**
 
