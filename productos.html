@@ -55,6 +55,39 @@
   </nav>
 
   <main>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="container">
+        <p class="page-header__breadcrumb"><a href="index.html">Inicio</a> / Productos</p>
+        <h1 class="page-header__title">Todos los productos</h1>
+      </div>
+    </div>
+
+    <!-- FILTER BAR + PRODUCT GRID -->
+    <section class="listing-section">
+      <div class="container">
+
+        <!-- Filter buttons -->
+        <div class="filter-bar">
+          <div class="filter-bar__inner">
+            <div class="filter-bar__buttons">
+              <button class="filter-btn active" data-category="todos">Todos</button>
+              <button class="filter-btn" data-category="regalos">Regalos</button>
+              <button class="filter-btn" data-category="bodas">Bodas</button>
+              <button class="filter-btn" data-category="hogar">Hogar</button>
+              <button class="filter-btn" data-category="gift-cards">Gift Cards</button>
+            </div>
+            <span class="filter-bar__count" id="productCount"></span>
+          </div>
+        </div>
+
+        <!-- Product cards injected by JS -->
+        <div class="product-grid" id="productGrid"></div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -97,5 +130,75 @@
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
+  <script>
+    const grid = document.getElementById('productGrid');
+    const countLabel = document.getElementById('productCount');
+
+    // Builds and injects product card HTML into the grid
+    function renderProducts(list) {
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div class="listing-empty" style="grid-column: 1 / -1;">
+            <div class="listing-empty__icon">🔍</div>
+            <p class="listing-empty__text">No hay productos en esta categoría.</p>
+          </div>`;
+      } else {
+        grid.innerHTML = list.map(product => `
+          <a href="producto.html?id=${product.id}" class="product-card">
+            <img
+              class="product-card__image"
+              src="${product.images[0]}"
+              alt="${product.name}"
+              loading="lazy"
+            />
+            ${product.badge ? `<span class="product-card__badge ${product.badge === 'Nuevo' ? 'product-card__badge--new' : ''}">${product.badge}</span>` : ''}
+            <div class="product-card__info">
+              <h2 class="product-card__name">${product.name}</h2>
+              <p class="product-card__price">Gs. ${product.price.toLocaleString('es-PY')}</p>
+            </div>
+          </a>
+        `).join('');
+      }
+
+      // Update the count label
+      countLabel.textContent = `${list.length} producto${list.length !== 1 ? 's' : ''}`;
+    }
+
+    // Filter logic — runs when a filter button is clicked
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Highlight the clicked button, remove highlight from others
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+        const filtered = category === 'todos'
+          ? products
+          : products.filter(p => p.category === category);
+
+        renderProducts(filtered);
+      });
+    });
+
+    // Check if a category was passed in the URL (e.g. from homepage category cards)
+    // URL example: productos.html?categoria=regalos
+    const params = new URLSearchParams(window.location.search);
+    const urlCategory = params.get('categoria');
+
+    if (urlCategory) {
+      // Activate the matching filter button
+      const matchingBtn = document.querySelector(`.filter-btn[data-category="${urlCategory}"]`);
+      if (matchingBtn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        matchingBtn.classList.add('active');
+        renderProducts(products.filter(p => p.category === urlCategory));
+      } else {
+        renderProducts(products);
+      }
+    } else {
+      // Default: show all products
+      renderProducts(products);
+    }
+  </script>
 </body>
 </html>

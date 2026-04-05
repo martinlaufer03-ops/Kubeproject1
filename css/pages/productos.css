@@ -1,0 +1,124 @@
+/* productos.css — styles only for the product listing page (productos.html) */
+
+
+/* =============================================
+   PAGE HEADER (breadcrumb + title bar)
+   ============================================= */
+
+.page-header {
+  background: var(--color-gray);
+  border-bottom: 1px solid var(--color-gray-mid);
+  padding: var(--space-lg) 0;
+}
+
+.page-header__title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.page-header__breadcrumb {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.page-header__breadcrumb a {
+  color: var(--color-orange);
+}
+
+.page-header__breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+
+/* =============================================
+   FILTER BAR
+   Row of buttons to filter products by category.
+   ============================================= */
+
+.filter-bar {
+  padding: var(--space-lg) 0 var(--space-md);
+  border-bottom: 1px solid var(--color-gray-mid);
+  margin-bottom: var(--space-lg);
+}
+
+.filter-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.filter-bar__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* Each filter button */
+.filter-btn {
+  padding: 8px var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-mid);
+  border-radius: 20px; /* pill shape */
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+/* Active/selected filter button — orange fill */
+.filter-btn.active {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+/* Product count label: "Mostrando 10 productos" */
+.filter-bar__count {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+
+/* =============================================
+   LISTING LAYOUT
+   ============================================= */
+
+.listing-section {
+  padding: 0 0 var(--space-2xl);
+}
+
+/* Override the default product-grid column count for this page:
+   3 columns on desktop instead of 4 */
+@media (min-width: 1024px) {
+  .listing-section .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Empty state — shown when no products match the filter */
+.listing-empty {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+  color: var(--color-text-light);
+}
+
+.listing-empty__icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+}
+
+.listing-empty__text {
+  font-size: 1rem;
+}

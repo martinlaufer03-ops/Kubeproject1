@@ -39,16 +39,16 @@
 ## Milestone 3: Homepage
 *Goal: The homepage looks like KUBE. Hero banner with headline and CTA, category grid, featured product cards, and a promo banner are all visible.*
 
-- [ ] 🔴 Write hero section HTML (headline, subheadline, CTA button) [20m]
-- [ ] 🔴 Style hero section in `css/pages/home.css` [30m]
-- [ ] 🔴 Write category grid HTML (3–4 category cards with images) [20m]
-- [ ] 🔴 Style category grid — responsive 2-col mobile, 4-col desktop [25m]
-- [ ] 🔴 Write `js/data/products.js` with 8–10 sample products [20m]
-- [ ] 🔴 Write featured products section HTML (rendered from `products.js`) [30m]
-- [ ] 🔴 Write `css/components.css` — product card styles [30m]
-- [ ] 🟡 Add promotional banner section HTML + CSS [20m]
+- [x] 🔴 Write hero section HTML (headline, subheadline, CTA button) [20m]
+- [x] 🔴 Style hero section in `css/pages/home.css` [30m]
+- [x] 🔴 Write category grid HTML (3–4 category cards with images) [20m]
+- [x] 🔴 Style category grid — responsive 2-col mobile, 4-col desktop [25m]
+- [x] 🔴 Write `js/data/products.js` with 8–10 sample products [20m]
+- [x] 🔴 Write featured products section HTML (rendered from `products.js`) [30m]
+- [x] 🔴 Write `css/components.css` — product card styles [30m]
+- [x] 🟡 Add promotional banner section HTML + CSS [20m]
 - [ ] 🟡 Test homepage at 375px and 1440px — fix any layout issues [15m]
-- [ ] 🟡 Git commit: "Day 3 — homepage" [5m]
+- [x] 🟡 Git commit: "Day 3 — homepage" [5m]
 
 **Milestone 3 total: ~3h 15m**
 
