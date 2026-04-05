@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
+  <style>
+    @media (min-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr 1.5fr !important; }
+    }
+  </style>
 </head>
 <body>
 
@@ -54,6 +59,121 @@
   </nav>
 
   <main>
+
+    <!-- PAGE HEADER -->
+    <div style="background: var(--color-gray); border-bottom: 1px solid var(--color-gray-mid); padding: var(--space-lg) 0;">
+      <div class="container">
+        <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 4px;"><a href="index.html" style="color: var(--color-orange);">Inicio</a> / Contacto</p>
+        <h1 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--color-navy);">Contacto</h1>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section style="padding: var(--space-2xl) 0;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-2xl);" class="contact-grid">
+
+          <!-- Contact info -->
+          <div style="display: flex; flex-direction: column; gap: var(--space-lg);">
+            <div>
+              <h2 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-navy); margin-bottom: var(--space-sm);">¿Cómo podemos ayudarte?</h2>
+              <p style="color: var(--color-text); line-height: 1.8;">Estamos aquí para responder tus preguntas sobre productos, listas de bodas, gift cards o cualquier otra consulta. Escribinos y te respondemos a la brevedad.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+
+              <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
+                <span style="font-size: 1.25rem; margin-top: 2px;">📍</span>
+                <div>
+                  <p style="font-weight: 700; color: var(--color-navy); margin-bottom: 2px;">Dirección</p>
+                  <p style="color: var(--color-text-light); font-size: 0.9rem;">Asunción, Paraguay</p>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
+                <span style="font-size: 1.25rem; margin-top: 2px;">📞</span>
+                <div>
+                  <p style="font-weight: 700; color: var(--color-navy); margin-bottom: 2px;">Teléfono / WhatsApp</p>
+                  <a href="tel:+595" style="color: var(--color-orange); font-size: 0.9rem;">+595 (21) 000-000</a>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
+                <span style="font-size: 1.25rem; margin-top: 2px;">✉️</span>
+                <div>
+                  <p style="font-weight: 700; color: var(--color-navy); margin-bottom: 2px;">Email</p>
+                  <a href="mailto:hola@kube.com.py" style="color: var(--color-orange); font-size: 0.9rem;">hola@kube.com.py</a>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
+                <span style="font-size: 1.25rem; margin-top: 2px;">🕐</span>
+                <div>
+                  <p style="font-weight: 700; color: var(--color-navy); margin-bottom: 2px;">Horario de atención</p>
+                  <p style="color: var(--color-text-light); font-size: 0.9rem;">Lunes a Viernes: 8:00 — 18:00<br>Sábados: 9:00 — 13:00</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <div style="background: var(--color-gray); border-radius: var(--radius); padding: var(--space-xl);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-navy); margin-bottom: var(--space-lg);">Envianos un mensaje</h3>
+            <form id="contactForm" style="display: flex; flex-direction: column; gap: var(--space-md);" novalidate>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm);">
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <label for="firstName" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Nombre</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Martín" required
+                    style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s; background: white;" />
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                  <label for="lastName" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Apellido</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="García"
+                    style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s; background: white;" />
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="email" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Email</label>
+                <input type="email" id="email" name="email" placeholder="hola@ejemplo.com" required
+                  style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s; background: white;" />
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="subject" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Asunto</label>
+                <select id="subject" name="subject"
+                  style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; background: white; cursor: pointer;">
+                  <option value="">Seleccioná un tema</option>
+                  <option value="productos">Consulta sobre productos</option>
+                  <option value="bodas">Lista de Bodas</option>
+                  <option value="gift-cards">Gift Cards</option>
+                  <option value="pedido">Seguimiento de pedido</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="message" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Mensaje</label>
+                <textarea id="message" name="message" rows="5" placeholder="Escribí tu mensaje acá..." required
+                  style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; resize: vertical; transition: border-color 0.2s; background: white;"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full">Enviar mensaje</button>
+
+              <!-- Success message (hidden until form is submitted) -->
+              <div id="formSuccess" style="display: none; background: #f0fff4; border: 1px solid #38a169; color: #276749; padding: var(--space-sm) var(--space-md); border-radius: var(--radius); font-size: 0.9rem;">
+                ✅ ¡Mensaje enviado! Te respondemos a la brevedad.
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -97,5 +217,21 @@
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
+  <script>
+    // Contact form — shows success message on submit (no real backend)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // stops the browser from reloading the page
+      document.getElementById('formSuccess').style.display = 'block';
+      this.reset(); // clears the form fields
+      // Scroll success message into view
+      document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    // Highlight input borders on focus
+    document.querySelectorAll('input, textarea, select').forEach(el => {
+      el.addEventListener('focus', () => el.style.borderColor = 'var(--color-orange)');
+      el.addEventListener('blur', () => el.style.borderColor = 'var(--color-gray-mid)');
+    });
+  </script>
 </body>
 </html>

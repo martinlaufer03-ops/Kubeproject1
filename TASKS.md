@@ -74,15 +74,15 @@
 ## Milestone 5: Product Detail Page
 *Goal: `producto.html?id=001` loads the correct product from `products.js`. Images switch when thumbnails are clicked. "Agregar al carrito" adds the item to localStorage and shows a count badge on the cart icon.*
 
-- [ ] 🔴 Write JS to read `?id=` from URL and find matching product [20m]
-- [ ] 🔴 Render product name, price, description from data into the page [20m]
-- [ ] 🔴 Write image gallery HTML (main image + thumbnails) [20m]
-- [ ] 🔴 Write `js/gallery.js` — thumbnail click switches main image [20m]
-- [ ] 🔴 Style product detail layout in `css/pages/producto.css` [30m]
-- [ ] 🔴 Write "Agregar al carrito" button — calls `addToCart()` from `cart.js` [15m]
-- [ ] 🟡 Show "Producto no encontrado" if ID doesn't match any product [10m]
+- [x] 🔴 Write JS to read `?id=` from URL and find matching product [20m]
+- [x] 🔴 Render product name, price, description from data into the page [20m]
+- [x] 🔴 Write image gallery HTML (main image + thumbnails) [20m]
+- [x] 🔴 Write `js/gallery.js` — thumbnail click switches main image [20m]
+- [x] 🔴 Style product detail layout in `css/pages/producto.css` [30m]
+- [x] 🔴 Write "Agregar al carrito" button — calls `addToCart()` from `cart.js` [15m]
+- [x] 🟡 Show "Producto no encontrado" if ID doesn't match any product [10m]
 - [ ] 🟡 Test clicking through from listing page → detail page [10m]
-- [ ] 🟡 Git commit: "Day 5 — product detail page" [5m]
+- [x] 🟡 Git commit: "Day 5 — product detail page" [5m]
 
 **Milestone 5 total: ~2h 30m**
 
