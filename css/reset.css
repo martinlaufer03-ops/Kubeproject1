@@ -1,0 +1,43 @@
+/* reset.css — removes the default styles that browsers add automatically.
+   Every browser (Chrome, Firefox, Safari) adds its own padding, margins,
+   and font sizes. This file zeroes them all out so we start from scratch. */
+
+*, *::before, *::after {
+  box-sizing: border-box; /* makes width/height include padding — much easier to work with */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth; /* smooth scroll when clicking anchor links */
+}
+
+body {
+  min-height: 100vh; /* body is at least as tall as the browser window */
+  line-height: 1.5;  /* comfortable reading spacing between lines */
+  -webkit-font-smoothing: antialiased; /* sharper text on Mac */
+}
+
+img, video {
+  max-width: 100%; /* images never overflow their container */
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit; /* form elements use the same font as the rest of the page */
+}
+
+ul, ol {
+  list-style: none; /* remove bullet points — we'll add our own when needed */
+}
+
+a {
+  text-decoration: none; /* remove underlines from links by default */
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}

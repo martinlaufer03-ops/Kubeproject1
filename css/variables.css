@@ -1,0 +1,41 @@
+/* variables.css — all design tokens for the KUBE site.
+   A "token" is just a named value — like giving a nickname to a color.
+   Instead of typing #142249 every time, we write var(--color-navy).
+   Change a value here and it updates everywhere on the site automatically. */
+
+:root {
+  /* --- COLORS --- */
+  --color-navy:    #142249; /* main brand color — used in header, headings, buttons */
+  --color-orange:  #ee7c49; /* accent color — used in CTAs, hover states, badges */
+  --color-white:   #ffffff;
+  --color-gray:    #f5f5f5; /* very light gray — used for subtle backgrounds */
+  --color-gray-mid: #e0e0e0; /* medium gray — used for borders and dividers */
+  --color-text:    #333333; /* dark gray — used for body text (easier on eyes than pure black) */
+  --color-text-light: #777777; /* lighter gray — used for secondary text like prices, labels */
+
+  /* --- SPACING (8px grid) ---
+     Every spacing value is a multiple of 8px.
+     This creates visual rhythm — everything lines up cleanly. */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  32px;
+  --space-xl:  48px;
+  --space-2xl: 64px;
+
+  /* --- TYPOGRAPHY --- */
+  --font-heading: 'PT Serif', serif;       /* used for titles and section headers */
+  --font-body:    'Nunito Sans', sans-serif; /* used for all other text */
+
+  /* --- BORDERS & SHADOWS --- */
+  --radius: 4px; /* how rounded the corners of cards and buttons are */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.08);  /* subtle shadow for cards */
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12); /* stronger shadow for dropdowns/modals */
+
+  /* --- LAYOUT --- */
+  --max-width: 1200px; /* the maximum width of content — wider screens get side margins */
+  --header-height: 70px; /* used to offset content below the fixed header */
+
+  /* --- TRANSITIONS --- */
+  --transition: 0.2s ease; /* standard speed for hover effects */
+}
