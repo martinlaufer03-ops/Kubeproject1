@@ -114,6 +114,10 @@
   color: var(--color-text-light);
 }
 
+.listing-empty--full {
+  grid-column: 1 / -1; /* spans all grid columns so it centers properly */
+}
+
 .listing-empty__icon {
   font-size: 3rem;
   margin-bottom: var(--space-sm);

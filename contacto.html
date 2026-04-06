@@ -13,11 +13,7 @@
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
-  <style>
-    @media (min-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr 1.5fr !important; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/pages/contacto.css" />
 </head>
 <body>
 
@@ -48,6 +44,7 @@
       </div>
     </div>
   </header>
+
   <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
     <ul class="mobile-nav__list">
       <li><a href="index.html" class="mobile-nav__link">Inicio</a></li>
@@ -61,90 +58,80 @@
   <main>
 
     <!-- PAGE HEADER -->
-    <div style="background: var(--color-gray); border-bottom: 1px solid var(--color-gray-mid); padding: var(--space-lg) 0;">
+    <div class="page-header">
       <div class="container">
-        <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 4px;"><a href="index.html" style="color: var(--color-orange);">Inicio</a> / Contacto</p>
-        <h1 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--color-navy);">Contacto</h1>
+        <p class="page-header__breadcrumb"><a href="index.html">Inicio</a> / Contacto</p>
+        <h1 class="page-header__title">Contacto</h1>
       </div>
     </div>
 
     <!-- CONTACT SECTION -->
-    <section style="padding: var(--space-2xl) 0;">
+    <section class="contact-section">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-2xl);" class="contact-grid">
+        <div class="contact-grid">
 
-          <!-- Contact info -->
-          <div style="display: flex; flex-direction: column; gap: var(--space-lg);">
+          <!-- Info column -->
+          <div class="contact-info">
             <div>
-              <h2 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-navy); margin-bottom: var(--space-sm);">¿Cómo podemos ayudarte?</h2>
-              <p style="color: var(--color-text); line-height: 1.8;">Estamos aquí para responder tus preguntas sobre productos, listas de bodas, gift cards o cualquier otra consulta. Escribinos y te respondemos a la brevedad.</p>
+              <h2 class="contact-info__title">¿Cómo podemos ayudarte?</h2>
+              <p class="contact-info__intro">Estamos aquí para responder tus preguntas sobre productos, listas de bodas, gift cards o cualquier otra consulta. Escribinos y te respondemos a la brevedad.</p>
             </div>
-
-            <div style="display: flex; flex-direction: column; gap: var(--space-md);">
-
-              <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
-                <span style="font-size: 1.25rem; margin-top: 2px;">📍</span>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <span class="contact-detail__icon">📍</span>
                 <div>
-                  <p style="font-weight: 700; color: var(--color-navy); margin-bottom: 2px;">Dirección</p>
-                  <p style="color: var(--color-text-light); font-size: 0.9rem;">Asunción, Paraguay</p>
+                  <p class="contact-detail__label">Dirección</p>
+                  <p class="contact-detail__value">Asunción, Paraguay</p>
                 </div>
               </div>
-
-              <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
-                <span style="font-size: 1.25rem; margin-top: 2px;">📞</span>
+              <div class="contact-detail">
+                <span class="contact-detail__icon">📞</span>
                 <div>
-                  <p style="font-weight: 700; color: var(--color-navy); margin-bottom: 2px;">Teléfono / WhatsApp</p>
-                  <a href="tel:+595" style="color: var(--color-orange); font-size: 0.9rem;">+595 (21) 000-000</a>
+                  <p class="contact-detail__label">Teléfono / WhatsApp</p>
+                  <p class="contact-detail__value"><a href="tel:+595">+595 (21) 000-000</a></p>
                 </div>
               </div>
-
-              <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
-                <span style="font-size: 1.25rem; margin-top: 2px;">✉️</span>
+              <div class="contact-detail">
+                <span class="contact-detail__icon">✉️</span>
                 <div>
-                  <p style="font-weight: 700; color: var(--color-navy); margin-bottom: 2px;">Email</p>
-                  <a href="mailto:hola@kube.com.py" style="color: var(--color-orange); font-size: 0.9rem;">hola@kube.com.py</a>
+                  <p class="contact-detail__label">Email</p>
+                  <p class="contact-detail__value"><a href="mailto:hola@kube.com.py">hola@kube.com.py</a></p>
                 </div>
               </div>
-
-              <div style="display: flex; align-items: flex-start; gap: var(--space-sm);">
-                <span style="font-size: 1.25rem; margin-top: 2px;">🕐</span>
+              <div class="contact-detail">
+                <span class="contact-detail__icon">🕐</span>
                 <div>
-                  <p style="font-weight: 700; color: var(--color-navy); margin-bottom: 2px;">Horario de atención</p>
-                  <p style="color: var(--color-text-light); font-size: 0.9rem;">Lunes a Viernes: 8:00 — 18:00<br>Sábados: 9:00 — 13:00</p>
+                  <p class="contact-detail__label">Horario de atención</p>
+                  <p class="contact-detail__value">Lunes a Viernes: 8:00 — 18:00<br>Sábados: 9:00 — 13:00</p>
                 </div>
               </div>
-
             </div>
           </div>
 
-          <!-- Contact form -->
-          <div style="background: var(--color-gray); border-radius: var(--radius); padding: var(--space-xl);">
-            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-navy); margin-bottom: var(--space-lg);">Envianos un mensaje</h3>
-            <form id="contactForm" style="display: flex; flex-direction: column; gap: var(--space-md);" novalidate>
+          <!-- Form column -->
+          <div class="contact-form-wrap">
+            <h3 class="contact-form-wrap__title">Envianos un mensaje</h3>
+            <form id="contactForm" class="contact-form" novalidate>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm);">
-                <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <label for="firstName" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Nombre</label>
-                  <input type="text" id="firstName" name="firstName" placeholder="Martín" required
-                    style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s; background: white;" />
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="firstName">Nombre</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Martín" required />
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 6px;">
-                  <label for="lastName" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Apellido</label>
-                  <input type="text" id="lastName" name="lastName" placeholder="García"
-                    style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s; background: white;" />
+                <div class="form-field">
+                  <label for="lastName">Apellido</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="García" />
                 </div>
               </div>
 
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                <label for="email" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Email</label>
-                <input type="email" id="email" name="email" placeholder="hola@ejemplo.com" required
-                  style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s; background: white;" />
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="hola@ejemplo.com" required />
               </div>
 
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                <label for="subject" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Asunto</label>
-                <select id="subject" name="subject"
-                  style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; background: white; cursor: pointer;">
+              <div class="form-field">
+                <label for="subject">Asunto</label>
+                <select id="subject" name="subject">
                   <option value="">Seleccioná un tema</option>
                   <option value="productos">Consulta sobre productos</option>
                   <option value="bodas">Lista de Bodas</option>
@@ -154,16 +141,14 @@
                 </select>
               </div>
 
-              <div style="display: flex; flex-direction: column; gap: 6px;">
-                <label for="message" style="font-size: 0.875rem; font-weight: 600; color: var(--color-navy);">Mensaje</label>
-                <textarea id="message" name="message" rows="5" placeholder="Escribí tu mensaje acá..." required
-                  style="padding: 10px var(--space-sm); border: 2px solid var(--color-gray-mid); border-radius: var(--radius); font-family: var(--font-body); font-size: 0.95rem; outline: none; resize: vertical; transition: border-color 0.2s; background: white;"></textarea>
+              <div class="form-field">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" placeholder="Escribí tu mensaje acá..." required></textarea>
               </div>
 
               <button type="submit" class="btn btn--primary btn--full">Enviar mensaje</button>
 
-              <!-- Success message (hidden until form is submitted) -->
-              <div id="formSuccess" style="display: none; background: #f0fff4; border: 1px solid #38a169; color: #276749; padding: var(--space-sm) var(--space-md); border-radius: var(--radius); font-size: 0.9rem;">
+              <div id="formSuccess" class="form-success">
                 ✅ ¡Mensaje enviado! Te respondemos a la brevedad.
               </div>
 
@@ -213,24 +198,15 @@
   <div class="cart-drawer" id="cartDrawer"></div>
   <div class="cart-overlay" id="cartOverlay"></div>
 
-
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
   <script>
-    // Contact form — shows success message on submit (no real backend)
     document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // stops the browser from reloading the page
-      document.getElementById('formSuccess').style.display = 'block';
-      this.reset(); // clears the form fields
-      // Scroll success message into view
+      e.preventDefault();
+      document.getElementById('formSuccess').classList.add('is-visible');
+      this.reset();
       document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-
-    // Highlight input borders on focus
-    document.querySelectorAll('input, textarea, select').forEach(el => {
-      el.addEventListener('focus', () => el.style.borderColor = 'var(--color-orange)');
-      el.addEventListener('blur', () => el.style.borderColor = 'var(--color-gray-mid)');
     });
   </script>
 </body>

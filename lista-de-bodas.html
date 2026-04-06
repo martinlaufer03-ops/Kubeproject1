@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages/lista-de-bodas.css" />
 </head>
 <body>
 
@@ -43,6 +44,7 @@
       </div>
     </div>
   </header>
+
   <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
     <ul class="mobile-nav__list">
       <li><a href="index.html" class="mobile-nav__link">Inicio</a></li>
@@ -56,84 +58,75 @@
   <main>
 
     <!-- HERO -->
-    <section style="background: var(--color-navy); color: white; padding: 80px 0;">
-      <div class="container" style="text-align: center;">
-        <span style="background: var(--color-orange); color: white; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 4px;">Lista de Bodas</span>
-        <h1 style="font-family: var(--font-heading); font-size: 2.5rem; margin: 24px 0 16px; line-height: 1.2;">Tu lista de bodas, <span style="color: var(--color-orange);">sin complicaciones</span></h1>
-        <p style="font-size: 1.05rem; opacity: 0.85; max-width: 540px; margin: 0 auto 32px; line-height: 1.7;">Armá tu lista con los productos que más te gustan y compartila con tus invitados. Simple, elegante y sin estrés.</p>
+    <section class="bodas-hero">
+      <div class="container">
+        <span class="bodas-hero__tag">Lista de Bodas</span>
+        <h1 class="bodas-hero__title">Tu lista de bodas, <span>sin complicaciones</span></h1>
+        <p class="bodas-hero__subtitle">Armá tu lista con los productos que más te gustan y compartila con tus invitados. Simple, elegante y sin estrés.</p>
         <a href="contacto.html" class="btn btn--primary">Empezar mi lista</a>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section style="padding: var(--space-2xl) 0; background: var(--color-white);">
+    <section class="bodas-steps">
       <div class="container">
         <h2 class="section-title">¿Cómo funciona?</h2>
         <p class="section-subtitle">En tres pasos simples tenés tu lista lista</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-lg); margin-top: var(--space-xl);">
-
-          <div style="text-align: center; padding: var(--space-lg);">
-            <div style="width: 64px; height: 64px; background: var(--color-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 1.5rem; color: white; font-weight: 700;">1</div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-navy); margin-bottom: var(--space-xs);">Elegís los productos</h3>
-            <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6;">Explorá nuestro catálogo y seleccioná todo lo que querés para tu hogar.</p>
+        <div class="bodas-steps__grid">
+          <div class="step-card">
+            <div class="step-card__number">1</div>
+            <h3 class="step-card__title">Elegís los productos</h3>
+            <p class="step-card__text">Explorá nuestro catálogo y seleccioná todo lo que querés para tu hogar.</p>
           </div>
-
-          <div style="text-align: center; padding: var(--space-lg);">
-            <div style="width: 64px; height: 64px; background: var(--color-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 1.5rem; color: white; font-weight: 700;">2</div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-navy); margin-bottom: var(--space-xs);">Compartís tu lista</h3>
-            <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6;">Te damos un link único para compartir con tus invitados por WhatsApp o email.</p>
+          <div class="step-card">
+            <div class="step-card__number">2</div>
+            <h3 class="step-card__title">Compartís tu lista</h3>
+            <p class="step-card__text">Te damos un link único para compartir con tus invitados por WhatsApp o email.</p>
           </div>
-
-          <div style="text-align: center; padding: var(--space-lg);">
-            <div style="width: 64px; height: 64px; background: var(--color-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-md); font-size: 1.5rem; color: white; font-weight: 700;">3</div>
-            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-navy); margin-bottom: var(--space-xs);">Recibís tus regalos</h3>
-            <p style="font-size: 0.9rem; color: var(--color-text-light); line-height: 1.6;">Tus invitados eligen y compran directamente. Vos recibís todo coordinado.</p>
+          <div class="step-card">
+            <div class="step-card__number">3</div>
+            <h3 class="step-card__title">Recibís tus regalos</h3>
+            <p class="step-card__text">Tus invitados eligen y compran directamente. Vos recibís todo coordinado.</p>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- BENEFITS -->
-    <section style="padding: var(--space-2xl) 0; background: var(--color-gray);">
+    <section class="bodas-benefits">
       <div class="container">
         <h2 class="section-title">¿Por qué elegir KUBE?</h2>
         <p class="section-subtitle">Miles de parejas ya confiaron en nosotros</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); margin-top: var(--space-xl);">
-
-          <div style="background: white; border-radius: var(--radius); padding: var(--space-md); border: 1px solid var(--color-gray-mid);">
-            <div style="font-size: 1.75rem; margin-bottom: var(--space-xs);">🎁</div>
-            <h4 style="font-family: var(--font-heading); color: var(--color-navy); margin-bottom: 6px;">Gran variedad</h4>
-            <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.6;">Cientos de productos seleccionados para el hogar y la vida en pareja.</p>
+        <div class="bodas-benefits__grid">
+          <div class="benefit-card">
+            <div class="benefit-card__icon">🎁</div>
+            <h4 class="benefit-card__title">Gran variedad</h4>
+            <p class="benefit-card__text">Cientos de productos seleccionados para el hogar y la vida en pareja.</p>
           </div>
-
-          <div style="background: white; border-radius: var(--radius); padding: var(--space-md); border: 1px solid var(--color-gray-mid);">
-            <div style="font-size: 1.75rem; margin-bottom: var(--space-xs);">📦</div>
-            <h4 style="font-family: var(--font-heading); color: var(--color-navy); margin-bottom: 6px;">Entrega a domicilio</h4>
-            <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.6;">Enviamos a todo el Paraguay. Tus invitados no necesitan salir de casa.</p>
+          <div class="benefit-card">
+            <div class="benefit-card__icon">📦</div>
+            <h4 class="benefit-card__title">Entrega a domicilio</h4>
+            <p class="benefit-card__text">Enviamos a todo el Paraguay. Tus invitados no necesitan salir de casa.</p>
           </div>
-
-          <div style="background: white; border-radius: var(--radius); padding: var(--space-md); border: 1px solid var(--color-gray-mid);">
-            <div style="font-size: 1.75rem; margin-bottom: var(--space-xs);">💬</div>
-            <h4 style="font-family: var(--font-heading); color: var(--color-navy); margin-bottom: 6px;">Soporte personal</h4>
-            <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.6;">Un asesor te acompaña desde que armás la lista hasta el gran día.</p>
+          <div class="benefit-card">
+            <div class="benefit-card__icon">💬</div>
+            <h4 class="benefit-card__title">Soporte personal</h4>
+            <p class="benefit-card__text">Un asesor te acompaña desde que armás la lista hasta el gran día.</p>
           </div>
-
-          <div style="background: white; border-radius: var(--radius); padding: var(--space-md); border: 1px solid var(--color-gray-mid);">
-            <div style="font-size: 1.75rem; margin-bottom: var(--space-xs);">✅</div>
-            <h4 style="font-family: var(--font-heading); color: var(--color-navy); margin-bottom: 6px;">Sin duplicados</h4>
-            <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.6;">Cuando un invitado reserva un regalo, se marca automáticamente.</p>
+          <div class="benefit-card">
+            <div class="benefit-card__icon">✅</div>
+            <h4 class="benefit-card__title">Sin duplicados</h4>
+            <p class="benefit-card__text">Cuando un invitado reserva un regalo, se marca automáticamente.</p>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section style="background: var(--color-orange); color: white; padding: var(--space-2xl) 0; text-align: center;">
+    <section class="bodas-cta">
       <div class="container">
-        <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--space-sm);">¿Listo para empezar?</h2>
-        <p style="font-size: 1rem; opacity: 0.9; margin-bottom: var(--space-lg); max-width: 460px; margin-left: auto; margin-right: auto;">Contactanos y un asesor te ayuda a armar tu lista perfecta sin costo adicional.</p>
+        <h2 class="bodas-cta__title">¿Listo para empezar?</h2>
+        <p class="bodas-cta__text">Contactanos y un asesor te ayuda a armar tu lista perfecta sin costo adicional.</p>
         <a href="contacto.html" class="btn btn--ghost">Contactar un asesor</a>
       </div>
     </section>
@@ -176,7 +169,6 @@
 
   <div class="cart-drawer" id="cartDrawer"></div>
   <div class="cart-overlay" id="cartOverlay"></div>
-
 
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>

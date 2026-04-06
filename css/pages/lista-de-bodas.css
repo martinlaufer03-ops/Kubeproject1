@@ -1,0 +1,154 @@
+/* lista-de-bodas.css — styles for the wedding registry landing page */
+
+.bodas-hero {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.bodas-hero__tag {
+  display: inline-block;
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-md);
+}
+
+.bodas-hero__title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.bodas-hero__title span {
+  color: var(--color-orange);
+}
+
+.bodas-hero__subtitle {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  max-width: 540px;
+  margin: 0 auto var(--space-lg);
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .bodas-hero__title { font-size: 3rem; }
+}
+
+/* HOW IT WORKS */
+.bodas-steps {
+  padding: var(--space-2xl) 0;
+  background: var(--color-white);
+}
+
+.bodas-steps__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 600px) {
+  .bodas-steps__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.step-card {
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.step-card__number {
+  width: 64px;
+  height: 64px;
+  background: var(--color-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  font-size: 1.5rem;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.step-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-navy);
+  margin-bottom: var(--space-xs);
+}
+
+.step-card__text {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* BENEFITS */
+.bodas-benefits {
+  padding: var(--space-2xl) 0;
+  background: var(--color-gray);
+}
+
+.bodas-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.benefit-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  border: 1px solid var(--color-gray-mid);
+}
+
+.benefit-card__icon {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-xs);
+}
+
+.benefit-card__title {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.benefit-card__text {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* CTA BANNER */
+.bodas-cta {
+  background: var(--color-orange);
+  color: var(--color-white);
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.bodas-cta__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.bodas-cta__text {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}

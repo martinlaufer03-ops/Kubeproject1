@@ -110,20 +110,20 @@
 *Goal: Wedding registry, gift cards, and contact pages are all built, styled, and linked correctly from the nav.*
 
 ### Wedding Registry Page (`lista-de-bodas.html`)
-- [ ] 🔴 Write hero section — headline, description of the service [20m]
-- [ ] 🔴 Write "Cómo funciona" steps section (3 steps with icons) [20m]
-- [ ] 🔴 Write CTA section — "Contactanos" button linking to contacto.html [10m]
-- [ ] 🟡 Style the full page [30m]
+- [x] 🔴 Write hero section — headline, description of the service [20m]
+- [x] 🔴 Write "Cómo funciona" steps section (3 steps with icons) [20m]
+- [x] 🔴 Write CTA section — "Contactanos" button linking to contacto.html [10m]
+- [x] 🟡 Style the full page [30m]
 
 ### Gift Cards Page (`gift-cards.html`)
-- [ ] 🔴 Write gift card product page HTML (image, amounts, add to cart button) [20m]
-- [ ] 🟡 Style gift card page [20m]
+- [x] 🔴 Write gift card product page HTML (image, amounts, add to cart button) [20m]
+- [x] 🟡 Style gift card page [20m]
 
 ### Contact Page (`contacto.html`)
-- [ ] 🔴 Write contact form HTML (name, email, message, submit button) [15m]
-- [ ] 🔴 Write company info section (address, phone, social links) [10m]
-- [ ] 🟡 Style contact page [20m]
-- [ ] 🟡 Git commit: "Day 8 — registry, gift cards, contact pages" [5m]
+- [x] 🔴 Write contact form HTML (name, email, message, submit button) [15m]
+- [x] 🔴 Write company info section (address, phone, social links) [10m]
+- [x] 🟡 Style contact page [20m]
+- [x] 🟡 Git commit: "Day 8 — registry, gift cards, contact pages" [5m]
 
 **Milestone 7 total: ~2h 50m**
 
