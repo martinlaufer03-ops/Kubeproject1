@@ -132,6 +132,8 @@
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/quick-view.js"></script>
+  <script src="js/scroll-animations.js"></script>
   <script>
     const grid = document.getElementById('productGrid');
     const countLabel = document.getElementById('productCount');
@@ -146,7 +148,7 @@
           </div>`;
       } else {
         grid.innerHTML = list.map(product => `
-          <a href="producto.html?id=${product.id}" class="product-card">
+          <a href="producto.html?id=${product.id}" class="product-card reveal">
             <img
               class="product-card__image"
               src="${product.images[0]}"
@@ -164,6 +166,10 @@
 
       // Update the count label
       countLabel.textContent = `${list.length} producto${list.length !== 1 ? 's' : ''}`;
+
+      // Re-attach quick-view buttons and re-observe new cards for scroll animation
+      initQuickView();
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
 
     // Filter logic — runs when a filter button is clicked

@@ -91,22 +91,22 @@
         <h2 class="section-title">¿Qué estás buscando?</h2>
         <p class="section-subtitle">Explorá nuestras categorías y encontrá el regalo ideal</p>
         <div class="categories-grid">
-          <a href="productos.html?categoria=regalos" class="category-card">
+          <a href="productos.html?categoria=regalos" class="category-card reveal">
             <span class="category-card__icon">🎁</span>
             <span class="category-card__name">Regalos</span>
             <span class="category-card__count">Para toda ocasión</span>
           </a>
-          <a href="lista-de-bodas.html" class="category-card">
+          <a href="lista-de-bodas.html" class="category-card reveal">
             <span class="category-card__icon">💍</span>
             <span class="category-card__name">Lista de Bodas</span>
             <span class="category-card__count">Tu lista perfecta</span>
           </a>
-          <a href="productos.html?categoria=hogar" class="category-card">
+          <a href="productos.html?categoria=hogar" class="category-card reveal">
             <span class="category-card__icon">🏠</span>
             <span class="category-card__name">Hogar</span>
             <span class="category-card__count">Deco y living</span>
           </a>
-          <a href="gift-cards.html" class="category-card">
+          <a href="gift-cards.html" class="category-card reveal">
             <span class="category-card__icon">💳</span>
             <span class="category-card__name">Gift Cards</span>
             <span class="category-card__count">El regalo seguro</span>
@@ -195,6 +195,8 @@
   <script src="js/data/products.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/quick-view.js"></script>
+  <script src="js/scroll-animations.js"></script>
   <script>
     // Render the first 8 products into the featured grid on the homepage
     function renderFeatured() {
@@ -204,7 +206,7 @@
       const featured = products.slice(0, 8); // first 8 from products.js
 
       grid.innerHTML = featured.map(product => `
-        <a href="producto.html?id=${product.id}" class="product-card">
+        <a href="producto.html?id=${product.id}" class="product-card reveal">
           <img
             class="product-card__image"
             src="${product.images[0]}"
@@ -221,6 +223,7 @@
     }
 
     renderFeatured();
+    initQuickView(); // add "Vista rápida" buttons to the featured product cards
   </script>
 </body>
 </html>
