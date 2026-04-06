@@ -198,12 +198,22 @@
   <script src="js/quick-view.js"></script>
   <script src="js/scroll-animations.js"></script>
   <script>
-    // Render the first 8 products into the featured grid on the homepage
+    // Render 8 featured products — 2 from each category — so the homepage
+    // shows a good variety instead of just the first 8 in the array.
     function renderFeatured() {
       const grid = document.getElementById('featuredGrid');
       if (!grid) return;
 
-      const featured = products.slice(0, 8); // first 8 from products.js
+      function pick(category, count) {
+        return products.filter(p => p.category === category).slice(0, count);
+      }
+
+      const featured = [
+        ...pick('regalos', 2),
+        ...pick('hogar', 2),
+        ...pick('bodas', 2),
+        ...pick('gift-cards', 2)
+      ];
 
       grid.innerHTML = featured.map(product => `
         <a href="producto.html?id=${product.id}" class="product-card reveal">
@@ -223,7 +233,9 @@
     }
 
     renderFeatured();
-    initQuickView(); // add "Vista rápida" buttons to the featured product cards
+    initQuickView();
+    // Re-observe the newly injected cards for scroll animation
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
