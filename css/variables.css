@@ -6,12 +6,12 @@
 :root {
   /* --- COLORS --- */
   --color-navy:    #142249; /* main brand color — used in header, headings, buttons */
-  --color-orange:  #ee7c49; /* accent color — used in CTAs, hover states, badges */
+  --color-orange:  #d4622e; /* accent color — used in CTAs, hover states, badges (contrast-compliant) */
   --color-white:   #ffffff;
   --color-gray:    #f5f5f5; /* very light gray — used for subtle backgrounds */
   --color-gray-mid: #e0e0e0; /* medium gray — used for borders and dividers */
   --color-text:    #333333; /* dark gray — used for body text (easier on eyes than pure black) */
-  --color-text-light: #777777; /* lighter gray — used for secondary text like prices, labels */
+  --color-text-light: #666666; /* lighter gray — used for secondary text (darkened for contrast compliance) */
 
   /* --- SPACING (8px grid) ---
      Every spacing value is a multiple of 8px.
