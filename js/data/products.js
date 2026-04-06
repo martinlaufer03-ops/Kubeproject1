@@ -19,7 +19,7 @@ const products = [
     category: "regalos",
     price: 150000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/06/9570-3170-1-scaled-1.jpg"
     ],
     description: "Una caja de regalo cuidadosamente armada con productos seleccionados. Ideal para cualquier ocasión especial.",
     badge: "Destacado",
@@ -31,7 +31,7 @@ const products = [
     category: "regalos",
     price: 85000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/06/9560-82-1-1.jpg"
     ],
     description: "Set de 3 velas aromáticas artesanales con fragancias de jazmín, lavanda y vainilla.",
     badge: null,
@@ -43,7 +43,7 @@ const products = [
     category: "regalos",
     price: 220000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/06/910-5761-1.jpg"
     ],
     description: "Canasta con selección de productos gourmet importados: quesos, conservas, chocolates y más.",
     badge: "Oferta",
@@ -55,7 +55,7 @@ const products = [
     category: "hogar",
     price: 65000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/12/932-156-1.jpg"
     ],
     description: "Marco de madera con grabado personalizado. Disponible en varios tamaños.",
     badge: "Nuevo",
@@ -67,7 +67,7 @@ const products = [
     category: "regalos",
     price: 195000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/06/933-534-1.jpg"
     ],
     description: "Kit completo para una experiencia de spa en casa: sales de baño, mascarillas, aceites esenciales.",
     badge: null,
@@ -79,7 +79,7 @@ const products = [
     category: "bodas",
     price: 280000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/10/921-6946.jpg"
     ],
     description: "Set de 6 copas de cristal bohemio. Perfecto para incluir en listas de boda.",
     badge: null,
@@ -91,7 +91,7 @@ const products = [
     category: "hogar",
     price: 90000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/06/555-3699.jpg"
     ],
     description: "Par de cojines decorativos en tela de algodón con diseños exclusivos.",
     badge: null,
@@ -103,7 +103,7 @@ const products = [
     category: "hogar",
     price: 120000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/07/9560-46-1.jpg"
     ],
     description: "Difusor ultrasónico de aromas con luz LED. Incluye 3 aceites esenciales.",
     badge: "Nuevo",
@@ -115,7 +115,7 @@ const products = [
     category: "bodas",
     price: 450000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/06/912-1455-1.jpg"
     ],
     description: "Vajilla de cerámica de diseño minimalista. Set de 12 piezas para 4 personas.",
     badge: "Destacado",
@@ -127,7 +127,7 @@ const products = [
     category: "gift-cards",
     price: 100000,
     images: [
-      "assets/images/product-placeholder.jpg"
+      "https://www.kube.com.py/wp-content/uploads/2021/06/9570-3170-1-scaled-1.jpg"
     ],
     description: "Tarjeta de regalo KUBE. El destinatario elige lo que más le guste.",
     badge: null,
